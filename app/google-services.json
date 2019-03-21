@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "63503961880",
+    "firebase_url": "https://swd-affiliate-marketing.firebaseio.com",
+    "project_id": "swd-affiliate-marketing",
+    "storage_bucket": "swd-affiliate-marketing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63503961880:android:9028025586babfbd",
+        "android_client_info": {
+          "package_name": "swd.affiliate_marketing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63503961880-sho29utgdm93hsjn4e9t5hpl8maj65mm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYa4Ft_rd2ac68ax2i08J6HyU0_zHjglo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:63503961880:android:0baf97f7870d472a",
+        "android_client_info": {
+          "package_name": "swd.affiliatemarketing.hotpromotion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "63503961880-sho29utgdm93hsjn4e9t5hpl8maj65mm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYa4Ft_rd2ac68ax2i08J6HyU0_zHjglo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
