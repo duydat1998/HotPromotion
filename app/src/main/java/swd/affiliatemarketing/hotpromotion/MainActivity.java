@@ -38,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        Log.d("Register service", "prômtion code tracking");
+        FirebaseMessaging.getInstance().subscribeToTopic("promotionCodeTracking");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         edtPromotionCode = findViewById(R.id.edtPromotionCode);
