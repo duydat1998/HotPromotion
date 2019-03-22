@@ -2,12 +2,10 @@ package swd.affiliatemarketing.hotpromotion.service;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.media.RingtoneManager;
 import android.net.Uri;
-import android.os.IBinder;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 
@@ -23,10 +21,11 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        super.onMessageReceived(remoteMessage);
+        Log.d("Firebase message", "received message from "+remoteMessage.getFrom());
+//        super.onMessageReceived(remoteMessage);
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
-            showNotification(remoteMessage.getData().get("promotionCode"), remoteMessage.getData().get("timeOfUsing"));
+            showPromotionCodeTrackingNotification(remoteMessage.getData().get("promotionCode"), remoteMessage.getData().get("timeOfUsing"));
         }
 
         if (remoteMessage.getNotification() != null) {
@@ -34,7 +33,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         }
     }
 
-    private void showNotification(String promotionCode, String time) {
+    private void showPromotionCodeTrackingNotification(String promotionCode, String time) {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
@@ -42,9 +41,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
-                .setContentTitle("Your promotion code " + promotionCode)
+                .setContentTitle("Promotion code used")
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("At " + time)
+                .setContentText("Your promotion code: " + promotionCode+" is used by a customer\n"+"At " + time)
                 .setAutoCancel(false)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);

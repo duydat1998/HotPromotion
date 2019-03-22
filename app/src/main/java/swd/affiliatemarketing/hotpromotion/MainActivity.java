@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 import com.squareup.moshi.Types;
@@ -38,8 +37,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Log.d("Register service", "prômtion code tracking");
-        FirebaseMessaging.getInstance().subscribeToTopic("promotionCodeTracking");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         edtPromotionCode = findViewById(R.id.edtPromotionCode);
