@@ -21,7 +21,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
-        Log.d("Firebase message", "received message from "+remoteMessage.getFrom());
+        Log.d("Hot promotion", "Firebase message: received message from "+remoteMessage.getFrom());
 //        super.onMessageReceived(remoteMessage);
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
@@ -34,6 +34,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     private void showPromotionCodeTrackingNotification(String promotionCode, String time) {
+        String message = "Promotion code: " + promotionCode+" is used\n"+"At " + time;
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
@@ -42,9 +43,10 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this)
                 .setContentTitle("Promotion code used")
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentText("Your promotion code: " + promotionCode+" is used by a customer\n"+"At " + time)
-                .setAutoCancel(false)
+                .setSmallIcon(R.drawable.sale)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(message))
+                .setContentText(message)
+                .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent);
 
