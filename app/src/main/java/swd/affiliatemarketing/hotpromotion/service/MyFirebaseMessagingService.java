@@ -38,8 +38,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     }
 
     private void showPromotionCodeTrackingNotification(String promotionCode, String time) {
-        String date = time.substring(0,11);
-        String hour = time.substring(12,20);
+        String date = time.substring(0,10);
+        String hour = time.substring(11,19);
         time = hour + " " + date;
         String message = "Promotion code: " + promotionCode+" is used\n"+"At " + time;
         Intent intent = new Intent(this, MainActivity.class);

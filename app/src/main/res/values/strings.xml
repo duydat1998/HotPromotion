@@ -3,7 +3,9 @@
     <string name="home_api">http://192.168.8.101/affiliatemarketing/</string>
 
 
-    <string name="virtual_api">http://10.0.2.2/affiliatemarketing/</string>
-    <!--<string name="virtual_api">http://192.168.8.101/affiliatemarketing/</string>-->
+    <!--<string name="virtual_api">http://10.0.2.2/affiliatemarketing/</string>-->
+    <string name="virtual_api">http://192.168.8.101/affiliatemarketing/</string>
     <!--<string name="virtual_api">http://10.82.140.150/affiliatemarketing/</string>-->
+
+    <string name="default_notification_channel_id">promotionCodeService</string>
 </resources>
